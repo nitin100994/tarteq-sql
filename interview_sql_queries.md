@@ -491,7 +491,4 @@ SELECT * FROM employees;  /* Inline comment */
 Explanation: Add notes in queries.
 
 
----
-
-✅ You're now interview-ready. Copy these, tweak them, and own the room.
 
