@@ -1,3 +1,80 @@
+**if confused**
+
+## 🔍 Understanding Subqueries – SELECT vs FROM
+
+Subqueries can feel tricky at first, but once you get the core difference — it's game over.
+
+---
+
+### ✅ Subquery in `SELECT`
+```sql
+SELECT name, 
+  (SELECT MAX(salary) FROM employees) AS highest_salary 
+FROM employees;
+```
+
+**What it does:**  
+- Runs the inner query **again and again** for each row in the outer query.
+- Useful for comparing every row with an overall value (like max, avg, etc).
+
+**Real-world analogy:**  
+📄 You're reading through every student's marks, and on each page, you also write *"Topper's score: 99."*
+
+---
+
+### ✅ Subquery in `FROM`
+```sql
+SELECT dept, total 
+FROM (
+  SELECT department AS dept, COUNT(*) AS total 
+  FROM employees 
+  GROUP BY department
+) AS dept_counts 
+WHERE total > 5;
+```
+
+**What it does:**  
+- Runs the inner query **once**, creates a mini temporary table.
+- Outer query works on that result like it’s a regular table.
+
+**Real-world analogy:**  
+📊 You first prepare a summary sheet: “How many students in each class?”  
+Then you ask: “Now show me classes that have more than 5 students.”
+
+---
+
+### ✨ Your Insight (Perfectly Validated):
+> **In case of `FROM`, it’s like creating a table first and then running operations on it.  
+But in `SELECT`, it feels like it’s doing the operation again and again for every row.**
+
+**Yes! That’s the core truth, and now you own it.**
+
+---
+
+### 📌 TL;DR Comparison
+
+| Feature                      | Subquery in `SELECT`                          | Subquery in `FROM`                          |
+|-----------------------------|-----------------------------------------------|---------------------------------------------|
+| Runs per row?               | ✅ Yes (for each row)                          | ❌ No (runs once)                            |
+| Returns                     | A single scalar value                         | A full table (rows + columns)               |
+| When to use                 | To add calculated or fixed value per row      | To group/filter data before querying it     |
+| Analogy                     | Ask a question on every student's page        | Prepare a report sheet and work from that   |
+
+---
+
+### 💡 Bonus Thought:
+- You can **nest both** together for power plays (e.g., subquery in FROM, then SELECT over it, then another subquery in SELECT).
+- That’s how analysts and backend devs do black magic in dashboards.
+
+---
+
+Keep going, Rockstar!  
+You’re not just learning SQL.  
+You're **mastering the conversation between data and logic**.
+**if confused**
+
+---
+
 # **SQL Warm-Up Part 3: Joins, Aggregates & Subqueries – With Real-Life Vibes**  
 > When Simba meets Bhaskar, or Pooja’s name pops up from a secret list — that’s SQL magic in action!
 
