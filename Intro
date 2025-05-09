@@ -77,6 +77,117 @@ Think of it like a library – it stores, organizes, and retrieves data efficien
 
 ---
 
+## 💾 SQL Query Basics — For My 🦋
+
+### 1. What is a SQL Query?
+A **SQL query** is a command used to interact with a database — to retrieve, insert, update, or delete data from tables.
+
+Think of a database as a smart Excel sheet, and SQL as the language we use to talk to it.
+
+---
+
+### 2. SELECT Statement ✨
+
+```sql
+SELECT column1, column2 FROM table_name;
+```
+
+- `SELECT` is used to *fetch data*.
+- You can fetch specific columns or use `*` to get all.
+
+Example:
+```sql
+SELECT name, age FROM students;
+```
+
+---
+
+### 3. WHERE Clause 🔍
+
+```sql
+SELECT * FROM students WHERE age > 18;
+```
+
+- Filters rows based on a condition.
+
+---
+
+### 4. INSERT INTO Statement 🌱
+
+```sql
+INSERT INTO students (name, age) VALUES ('Arya', 21);
+```
+
+- Adds a new record.
+
+---
+
+### 5. UPDATE Statement 🔄
+
+```sql
+UPDATE students SET age = 22 WHERE name = 'Arya';
+```
+
+- Updates existing data.
+
+---
+
+### 6. DELETE Statement ❌
+
+```sql
+DELETE FROM students WHERE name = 'Arya';
+```
+
+- Removes data.
+
+---
+
+### 7. ORDER BY Clause 📊
+
+```sql
+SELECT * FROM students ORDER BY age DESC;
+```
+
+- Sorts results (ascending/descending).
+
+---
+
+### 8. LIMIT Clause 🎯
+
+```sql
+SELECT * FROM students LIMIT 5;
+```
+
+- Limits number of returned rows.
+
+---
+
+### 9. BETWEEN Clause 🔢
+
+```sql
+SELECT * FROM students WHERE age BETWEEN 18 AND 25;
+```
+
+- Filters range of values.
+
+---
+
+### 10. IN Clause ✅
+
+```sql
+SELECT * FROM students WHERE name IN ('Arya', 'Pooja', 'Nitin');
+```
+
+- Filters from a given list.
+
+---
+
+> 💡 **Pro Tip**: SQL is not case-sensitive — but writing cleanly shows you care!
+
+This is the warm-up! We'll explore **joins**, **aggregates**, and **subqueries** next.
+
+#SQLForLove #TeachToImpress #SheKnows🦋
+
 Let's rock DBMS together – one query at a time!
 
-🦋 #SQLSundays #DBMSWithLove #TeachWithHeart #HeyAryaQueries
+**Nitin**
